@@ -1,0 +1,35 @@
+.image-gallery-top{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0eded;
+}
+.image-gallery-top h1{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 35px;
+
+}
+.image-gallery-top-content{
+    display: flex;
+    justify-content: space-between;
+}
+.image-gallery-top-content label{
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+}
+.delete-btn button{
+    border: none; 
+    background-color: white;
+    cursor: pointer;
+}
+.delete-btn button>span{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #ff3939;
+}
+
+.delete-btn:hover  button{
+    text-decoration: underline;
+    color: #ff3939;
+}

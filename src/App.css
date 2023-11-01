@@ -1,0 +1,14 @@
+:root {
+  --containerPadding: 2.4rem;
+  --containerWidth: 144.6rem;
+
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: calc(var(--containerWidth) + (var(--containerPadding) * 2));
+  margin: 0 auto;
+
+}

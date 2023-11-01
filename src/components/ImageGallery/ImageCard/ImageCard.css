@@ -1,0 +1,23 @@
+.single-image{
+    border: 1px solid #f0eded;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+}
+.single-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.single-image>:nth-child(1){
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1000;
+}
+.single-image:hover img{
+filter: brightness(60%);
+transition: filter .7s ease-in-out;
+}
