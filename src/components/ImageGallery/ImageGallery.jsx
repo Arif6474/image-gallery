@@ -1,14 +1,19 @@
 import ImageCard from "./ImageCard/ImageCard";
 import ImageGalleryTop from "./ImageGalleryTop/ImageGalleryTop";
+import initialData from "./initialData";
 import './ImageGallery.css'
+
 function ImageGallery() {
+
+  const {images} =initialData
+
   return (
     <div className="image-gallery">
       <div className="container">
         <ImageGalleryTop />
         <div className="image-group">
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-            <ImageCard key={i} />
+          {images?.map((item) => (
+            <ImageCard key={item.id} item={item}/>
           ))}
         </div>
       </div>

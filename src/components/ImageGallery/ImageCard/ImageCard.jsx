@@ -1,13 +1,13 @@
-import image from "../../../../src/assets/images/image-1.webp";
+/* eslint-disable react/prop-types */
 import "./ImageCard.css";
 
-function ImageCard() {
+function ImageCard({item}) {
   return (
     <div className="single-image">
       <div>
         <input type="checkbox"  />
       </div>
-      <img src={image} alt="" />
+      <img src={item?.image} alt="" />
     </div>
   );
 }
