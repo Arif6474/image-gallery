@@ -9,6 +9,7 @@ import image8 from '../../../src/assets/images/image-8.webp'
 import image9 from '../../../src/assets/images/image-9.webp'
 import image10 from '../../../src/assets/images/image-10.jpeg'
 import image11 from '../../../src/assets/images/image-11.jpeg'
+
 const initialData = {
   images: [
     {

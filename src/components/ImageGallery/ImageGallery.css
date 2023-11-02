@@ -9,7 +9,7 @@
   grid-auto-flow: dense;
   place-items: center;
 }
-.image-group >:nth-child(1) {
+/* .image-group >:nth-child(1) {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
-}
+} */
