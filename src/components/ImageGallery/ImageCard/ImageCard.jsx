@@ -2,9 +2,9 @@
 import { Draggable } from "react-beautiful-dnd";
 import "./ImageCard.css";
 
-function ImageCard({ item, index }) {
+function ImageCard({ item, index, handleSelectItem }) {
   return (
-    <Draggable draggableId={item.id.toString()} index={index}>
+    <Draggable draggableId={item.id} index={index}>
       {(provided) => (
         <div
           className="single-image"
@@ -13,7 +13,7 @@ function ImageCard({ item, index }) {
           ref={provided.innerRef}
         >
           <div>
-            <input type="checkbox" />
+            <input type="checkbox" onClick={() => handleSelectItem(item.id)} />
           </div>
           <img src={item?.image} alt="" />
         </div>
