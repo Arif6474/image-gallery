@@ -2,25 +2,21 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import ImageCard from "./ImageCard/ImageCard";
 import ImageGalleryTop from "./ImageGalleryTop/ImageGalleryTop";
 import initialData from "./initialData";
-import "./ImageGallery.css";
 import { useState } from "react";
+import "./ImageGallery.css";
 
 function ImageGallery() {
-  const { images } = initialData;
-  const [items, setItems] = useState(images);
+  const { products } = initialData;
+  const [items, setItems] = useState(products);
   const [selectedItems, setSelectedItems] = useState([]);
-  console.log(
-    "🚀 ~ file: ImageGallery.jsx:12 ~ ImageGallery ~ selectedItems:",
-    selectedItems
-  );
 
   const onDragEnd = (result) => {
-    if (!result.destination) return;
+   const {destination, source} =result
+    if (!destination) return;
 
     const reorderedItems = [...items];
-    const [movedItem] = reorderedItems.splice(result.source.index, 1);
-    reorderedItems.splice(result.destination.index, 0, movedItem);
-
+    const [movedItem] = reorderedItems.splice(source.index, 1);
+    reorderedItems.splice(destination.index, 0, movedItem);
     setItems(reorderedItems);
   };
 
@@ -41,29 +37,6 @@ function ImageGallery() {
     setItems(updatedItems);
     setSelectedItems([]);
   };
-  // const { images } = initialData;
-  // const [items, setItems] = useState(images);
-  // const [handleSelectedImages, setHandleSelectedImages] = useState([])
-
-  // async function onDragEnd(result) {
-  //   const { destination, source } = result;
-
-  //   if (
-  //     destination.droppableId === source.droppableId &&
-  //     destination.index === source.index
-  //   ) {
-  //     return;
-  //   }
-  //   const reorderedItems = Array.from(items);
-  //   const [removed] = reorderedItems.splice(source.index, 1);
-  //   reorderedItems.splice(destination.index, 0, removed);
-
-  //   setItems(reorderedItems);
-  // }
-
-  // function handleSelectedImages(item) {
-
-  // }
 
   return (
     <div className="image-gallery">
@@ -73,7 +46,7 @@ function ImageGallery() {
           selectedItems={selectedItems}
         />
         <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="bleh">
+          <Droppable droppableId="image-gallery" direction="horizontal">
             {(provided) => (
               <div
                 className="image-group"

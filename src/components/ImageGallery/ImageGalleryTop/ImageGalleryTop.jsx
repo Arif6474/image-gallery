@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./ImageGalleryTop.css";
 function ImageGalleryTop({ handleDeleteSelected, selectedItems }) {
+
   function numberOfItems(number) {
     switch (number) {
       case 1:
@@ -10,6 +11,7 @@ function ImageGalleryTop({ handleDeleteSelected, selectedItems }) {
         return number + " Files";
     }
   }
+  
   return (
     <div className="image-gallery-top">
       {selectedItems?.length > 0 ? (
