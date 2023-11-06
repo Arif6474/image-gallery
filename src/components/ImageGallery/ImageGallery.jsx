@@ -63,8 +63,8 @@ function ImageGallery() {
                     handleSelectItem={handleSelectItem}
                   />
                 ))}
-                <ImageUploadCard />
                 {provided.placeholder}
+                <ImageUploadCard />
               </div>
             )}
           </Droppable>
