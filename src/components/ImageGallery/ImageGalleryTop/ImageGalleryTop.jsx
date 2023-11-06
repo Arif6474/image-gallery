@@ -11,24 +11,26 @@ function ImageGalleryTop({ handleDeleteSelected, selectedItems }) {
         return number + " Files";
     }
   }
-  
+
   return (
     <div className="image-gallery-top">
-      {selectedItems?.length > 0 ? (
-        <div className="image-gallery-top-content">
-          <div>
-            <input type="checkbox" checked />
-            <label> {numberOfItems(selectedItems?.length)} Selected</label>
+      <div className="container_fluid">
+        {selectedItems?.length > 0 ? (
+          <div className="image-gallery-top-content">
+            <div>
+              <input type="checkbox" checked />
+              <label> {numberOfItems(selectedItems?.length)} Selected</label>
+            </div>
+            <div className="delete-btn">
+              <button onClick={handleDeleteSelected}>
+                <span>Delete {selectedItems?.length > 1 ? 'Files' : 'File'}</span>
+              </button>
+            </div>
           </div>
-          <div className="delete-btn">
-            <button onClick={handleDeleteSelected}>
-              <span>Delete {selectedItems?.length > 1 ? 'Files' : 'File'}</span>
-            </button>
-          </div>
-        </div>
-      ) : (
-        <h1>Gallery</h1>
-      )}
+        ) : (
+          <h1>Gallery</h1>
+        )}
+      </div>
     </div>
   );
 }

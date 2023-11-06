@@ -12,7 +12,8 @@ function ImageCard({ item, index, handleSelectItem }) {
           {...provided.dragHandleProps}
           ref={provided.innerRef}
         >
-          <div>
+          <div className="overlay"></div>
+          <div className="input-wrapper">
             <input type="checkbox" onClick={() => handleSelectItem(item.id)} />
           </div>
           <img src={item?.image} alt="" />

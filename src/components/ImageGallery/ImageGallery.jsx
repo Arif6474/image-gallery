@@ -3,6 +3,7 @@ import ImageCard from "./ImageCard/ImageCard";
 import ImageGalleryTop from "./ImageGalleryTop/ImageGalleryTop";
 import initialData from "./initialData";
 import { useState } from "react";
+import ImageUploadCard from "./ImageUploadCard/ImageUploadCard";
 import "./ImageGallery.css";
 
 function ImageGallery() {
@@ -40,11 +41,12 @@ function ImageGallery() {
 
   return (
     <div className="image-gallery">
-      <div className="container">
+      
         <ImageGalleryTop
           handleDeleteSelected={handleDeleteSelected}
           selectedItems={selectedItems}
         />
+        <div className="container_fluid">
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId="image-gallery" direction="horizontal">
             {(provided) => (
@@ -61,6 +63,7 @@ function ImageGallery() {
                     handleSelectItem={handleSelectItem}
                   />
                 ))}
+                <ImageUploadCard />
                 {provided.placeholder}
               </div>
             )}
